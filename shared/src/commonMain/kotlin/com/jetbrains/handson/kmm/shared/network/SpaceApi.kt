@@ -1,6 +1,7 @@
 package com.jetbrains.handson.kmm.shared.network
 
 
+import com.example.kmmexample.models.Base
 import com.example.kmmexample.models.RocketLaunch
 import io.ktor.client.*
 import io.ktor.client.call.*
@@ -19,7 +20,7 @@ class SpaceXApi {
         }
     }
 
-    suspend fun getAllLaunches(): List<RocketLaunch> {
-        return httpClient.get("https://api.spacexdata.com/v5/launches").body()
+    suspend fun getAllLaunches(): List<Base> {
+        return httpClient.get("https://api.spacexdata.com/v4/launches").body()
     }
 }

@@ -1,8 +1,8 @@
 package com.jetbrains.handson.kmm.shared.cache
 
-import com.example.kmmexample.models.Links
-import com.example.kmmexample.models.RocketLaunch
+import com.example.kmmexample.models.LinksMapper
 import com.example.kmmexample.models.Rocket
+import com.example.kmmexample.models.RocketLaunch
 
 internal class Database(databaseDriverFactory: DatabaseDriverFactory) {
     private val database = AppDatabase(databaseDriverFactory.createDriver())
@@ -45,7 +45,7 @@ internal class Database(databaseDriverFactory: DatabaseDriverFactory) {
                 name = name!!,
                 type = type!!
             ),
-            links = Links(
+            links = LinksMapper(
                 missionPatchUrl = missionPatchUrl,
                 articleUrl = articleUrl
             )

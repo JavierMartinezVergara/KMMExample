@@ -21,7 +21,7 @@ data class RocketLaunch(
     @SerialName("launch_success")
     val launchSuccess: Boolean?,
     @SerialName("links")
-    val links: Links
+    val links: LinksMapper
 )
 
 @Serializable
@@ -35,7 +35,7 @@ data class Rocket(
 )
 
 @Serializable
-data class Links(
+data class LinksMapper(
     @SerialName("mission_patch")
     val missionPatchUrl: String?,
     @SerialName("article_link")

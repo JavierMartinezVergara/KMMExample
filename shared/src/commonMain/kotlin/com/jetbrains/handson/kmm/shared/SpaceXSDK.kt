@@ -15,7 +15,7 @@ class SpaceXSDK(databaseDriverFactory: DatabaseDriverFactory) {
         return if (cachedLaunches.isNotEmpty() && !forceReload) {
             cachedLaunches
         } else {
-            api.getAllLaunches().also {
+            api.getAllLaunches().toRocket().also {
                 database.clearDatabase()
                 database.createLaunches(it)
             }
